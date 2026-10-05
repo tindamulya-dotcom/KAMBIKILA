@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Projet Kambikila — Gestion de ferme</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark"><img id="brandLogo" src="assets/kambikila-logo.png" alt="Logo Kambikila"></div>
+      <div><strong>FERME KAMBIKILA</strong><span>Gestion intelligente de votre exploitation</span></div>
+    </div>
+    <div class="phase"><span class="dot"></span> Phase investissement</div><div class="sidebar-photo"></div>
+    <nav id="nav">
+      <button class="nav-item active" data-page="dashboard">▦ <span>Tableau de bord</span></button>
+      <button class="nav-item" data-page="funding">↗ <span>Financements</span></button>
+      <button class="nav-item" data-page="expenses">↘ <span>Dépenses</span></button>
+      <button class="nav-item" data-page="quotes">☷ <span>Devis & activités</span></button>
+      <button class="nav-item" data-page="sales">◉ <span>Recettes & ventes</span></button>
+      <button class="nav-item" data-page="workers">♟ <span>Travailleurs & paie</span></button>
+      <button class="nav-item" data-page="materials">▣ <span>Matériels</span></button>
+      <button class="nav-item" data-page="settings">⚙ <span>Paramètres</span></button>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="storage-status"><span class="green-dot"></span> Données sauvegardées localement</div>
+      <button id="exportBtn" class="ghost-btn">Exporter une sauvegarde</button>
+      <label class="ghost-btn import-label">Importer une sauvegarde<input id="importInput" type="file" accept=".json"></label>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">PROJET KAMBIKILA / PILOTAGE</div>
+        <h1 id="pageTitle">Tableau de bord</h1>
+      </div>
+      <div class="top-actions">
+        <div class="date-badge">◷ <span id="todayLabel">05 octobre 2026</span></div>
+        <div class="exchange-badge">1 USD = <strong id="topRate">2 850 FC</strong></div>
+        <div class="user-badge"><span class="user-avatar">A</span><span><b>Administrateur</b><small>Projet Kambikila</small></span></div>
+        <button class="secondary-btn header-brand-btn" onclick="setPage('settings')">Changer logo</button>
+        <button class="primary-btn" id="quickAdd">＋ Nouvelle opération</button>
+      </div>
+    </header>
+
+    <section id="content"></section>
+  </main>
+</div>
+
+<div class="modal-backdrop hidden" id="modalBackdrop">
+  <div class="modal" id="modal"></div>
+</div>
+<div class="toast" id="toast"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.10/pdfmake.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.10/vfs_fonts.js"></script><script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
